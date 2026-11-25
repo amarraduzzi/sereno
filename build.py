@@ -9,8 +9,8 @@ def L(l,place,label=None,cls="xl"):
 for _l in T:
     T[_l]["arts"]=[dict(a,done=T[_l]["done"],rel=T[_l]["rel"],fine=T[_l]["fine"]) for a in T[_l]["arts"]]
 
-AK=["atmen"]
-ALT={"de":{"pano":"Ruhiger Morgen am Wasser","atmen":"Ein stiller Moment der Ruhe"},"fr":{"pano":"Matin calme au bord de l'eau","atmen":"Un instant de calme"},"it":{"pano":"Mattina calma sull'acqua","atmen":"Un momento di calma"}}
+AK=["atmen","abend","natur","digital"]
+ALT={"de":{"pano":"Ruhiger Morgen am Wasser","atmen":"Ein stiller Moment der Ruhe","abend":"Ruhiger Abend mit warmem Licht","natur":"Ein Weg durch stille Natur","digital":"Ein Tisch ohne Bildschirme"},"fr":{"pano":"Matin calme au bord de l'eau","atmen":"Un instant de calme","abend":"Soirée calme à la lumière douce","natur":"Un chemin dans la nature silencieuse","digital":"Une table sans écrans"},"it":{"pano":"Mattina calma sull'acqua","atmen":"Un momento di calma","abend":"Sera tranquilla con luce calda","natur":"Un sentiero nella natura silenziosa","digital":"Un tavolo senza schermi"}}
 
 # ---------- generated placeholder artwork (soft skin-tone blobs) ----------
 def art(seed,w=1600,h=900,n=16):
