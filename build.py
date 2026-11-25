@@ -35,6 +35,10 @@ def bg(n):
     f=imgfile(n)
     return f' style="background-image:linear-gradient(rgba(243,245,240,.28),rgba(243,245,240,.28)),url({f});background-size:cover;background-position:center"' if f else ""
 
+def hbg():
+    f=imgfile("hero") or imgfile("pano")
+    return f'<div class="hbg" aria-hidden="true" style="background-image:url({f})"></div><div class="hveil" aria-hidden="true"></div>' if f and f.endswith(".jpg") else ""
+
 # ---------- shared parts ----------
 def head(l,title,desc,path_by_lang,self_path):
     alts="".join(f'<link rel="alternate" hreflang="{x}" href="{B}{p}">' for x,p in path_by_lang.items())+f'<link rel="alternate" hreflang="x-default" href="{B}{path_by_lang["de"]}">'
@@ -74,7 +78,7 @@ def rings_svg():
 def home(l):
     t=T[l];w=t["sun"];k=t["ck"];r=t["rt"];m=t["my"];f=t["fq"];n=t["pl"]
     o=head(l,t["title"],t["desc"],paths_home(),f"/{l}/")+header(l,paths_home())
-    o+=f'<section class="hero"><canvas id="orbs" aria-hidden="true"></canvas><div class="wrap"><span class="eyebrow">{t["eb"]}</span><h1>{t["h"]}</h1><p>{t["p"]}</p><div class="btns"><a class="btn g" href="#rechner">{t["b1"]}</a>{L(l,"hero",GO[l],"btn o")}</div></div></section>'
+    o+=f'<section class="hero">{hbg()}<canvas id="orbs" aria-hidden="true"></canvas><div class="wrap"><span class="eyebrow">{t["eb"]}</span><h1>{t["h"]}</h1><p>{t["p"]}</p><div class="btns"><a class="btn g" href="#rechner">{t["b1"]}</a>{L(l,"hero",GO[l],"btn o")}</div></div></section>'
     grp="".join(f'<div class="grp"><span class="gl">{gl}</span><div class="seg" role="group" aria-label="{gl}">'+"".join(f'<button type="button" aria-pressed="{"true" if i==1 else "false"}">{x}</button>' for i,x in enumerate(opts))+'</div></div>' for (gl,opts) in w["g"])
     o+=f'<section id="rechner" class="calc"><div class="wrap"><span class="eyebrow">{w["k"]}</span><h2>{w["h"]}</h2><p class="sub">{w["p"]}</p><div class="card rv" id="calc" data-cfg="{js(dict(l=w["l"],c=w["c"]))}"><div class="grps">{grp}</div><div class="cres" aria-live="polite"></div><p class="note">{w["note"]} {L(l,"rechner")}</p></div></div></section>'
     o+=f'<section class="pano"{bg("pano")}><div class="pk"><p>{t["pano"]}</p>{L(l,"pano",GO[l])}</div></section>'

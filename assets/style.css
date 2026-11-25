@@ -129,3 +129,13 @@ footer{padding:50px 0 60px;border-top:1px solid var(--line);color:var(--mu);font
 @media(max-width:700px){.arts{grid-template-columns:1fr}}
 @media(max-width:520px){section{padding:64px 0}.myths{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.btn{width:100%;text-align:center}.card{padding:22px}.seg button{padding:9px 14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.lk .on{transition:none}}
+
+/* foto-hero */
+.hero .hbg{position:absolute;inset:0;background-size:cover;background-position:70% 60%;transform-origin:70% 60%;animation:hz 26s ease-in-out infinite alternate}
+.hero .hveil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,245,240,.9) 0,rgba(243,245,240,.62) 38%,rgba(243,245,240,.08) 72%,rgba(243,245,240,0) 100%),linear-gradient(0deg,rgba(243,245,240,.55) 0,rgba(243,245,240,0) 22%)}
+.hero .hbg~#orbs{display:none}
+.hero .hbg~.wrap h1{color:var(--tx)}
+.hero .hbg~.wrap .btn.o{background:rgba(255,255,255,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+@keyframes hz{from{transform:scale(1)}to{transform:scale(1.07)}}
+@media(max-width:700px){.hero .hbg{background-position:78% 60%}.hero .hveil{background:linear-gradient(180deg,rgba(243,245,240,.82) 0,rgba(243,245,240,.7) 55%,rgba(243,245,240,.35) 100%)}}
+@media(prefers-reduced-motion:reduce){.hero .hbg{animation:none}}
