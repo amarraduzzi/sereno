@@ -1,4 +1,4 @@
-MAIN="https://molitademo1.pages.dev"
+MAIN="https://molitademo2.pages.dev"
 B="https://sereno-ruhe.ch"
 BRAND="Sereno"
 UTM="sereno"
